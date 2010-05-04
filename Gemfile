@@ -36,7 +36,7 @@ end
 
 group :development, :test do
   gem 'wirble'
-  #gem 'ruby-debug' # does not support 1.9.x
+  gem 'ruby-debug19' # does not support 1.9.2
 end
 
 # Use unicorn as the web server
