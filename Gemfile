@@ -11,6 +11,7 @@ gem 'formtastic'
 gem 'nifty-generators'
 
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+gem 'bcrypt-ruby'
 
 #Heroku
 gem 'aws-s3'
@@ -19,7 +20,7 @@ gem 'mime-types'
 gem 'builder'
 
 group :test do
-  gem 'factory_girl'
+  gem 'factory_girl', :git => 'git://github.com/thoughtbot/factory_girl.git', :branch => 'rails3'
   
   gem 'rspec'
   gem 'rspec-rails',      '>= 2.0.0.beta'
@@ -30,8 +31,11 @@ group :test do
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber',         '0.7.2'
-  gem 'spork'
   gem 'launchy'
+  gem 'email_spec'
+  
+  gem 'spork'
+  gem 'hydra'
 end
 
 group :development, :test do

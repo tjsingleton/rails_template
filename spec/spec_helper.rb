@@ -3,6 +3,7 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.dirname(__FILE__) + "/../config/environment" unless defined?(Rails)
 require 'rspec/rails'
+require 'email_spec'
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
@@ -21,4 +22,7 @@ Rspec.configure do |config|
   # If you'd prefer not to run each of your examples within a transaction,
   # uncomment the following line.
   # config.use_transactional_examples = false
+
+  config.include(EmailSpec::Helpers)
+  config.include(EmailSpec::Matchers)
 end
