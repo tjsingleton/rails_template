@@ -1,6 +1,6 @@
 Crunch::Application.routes.draw do |map|
   resource :user
-  
+  resource :account
   resource :user_session
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
@@ -8,7 +8,7 @@ Crunch::Application.routes.draw do |map|
   resources :password_reset
 
   root :to => 'home#index'
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

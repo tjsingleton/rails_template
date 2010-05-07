@@ -1,12 +1,12 @@
 <% title "Login" %>
 
-<% semantic_form_for @user_session, :url => :user_session_path do |f| %>
-  <% f.inputs do %>
+<%= semantic_form_for @user_session, :url => user_session_path do |f| %>
+  <%= f.inputs do %>
     <%= f.input :email %>
     <%= f.input :password %>
     <%= f.input :remember_me, :as => :check_boxes, :collection => ["Remember Me"], :label => "&nbsp;", :required => false %>
   <% end %>
-  <% f.buttons do %>
+  <%= f.buttons do %>
     <%= f.commit_button "Login" %>
   <% end %>
   <p><%= link_to "Forgot your password?", url_for(:controller => "password_resets", :action => "new", :email => @email) %></p>
