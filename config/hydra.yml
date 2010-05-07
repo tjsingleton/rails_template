@@ -1,3 +1,6 @@
 workers:
-    - type: local
-      runners: 2
+  - type: local
+    runners: 2
+
+listeners:
+  - Hydra::Listener::MinimalOutput.new
