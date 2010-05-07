@@ -21,6 +21,7 @@ gem 'builder'
 
 group :test do
   gem 'factory_girl', :git => 'git://github.com/thoughtbot/factory_girl.git', :branch => 'rails3'
+  gem 'ffaker'
   
   gem 'rspec'
   gem 'rspec-rails',      '>= 2.0.0.beta'
