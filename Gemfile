@@ -7,7 +7,7 @@ gem 'rails', '3.0.0.beta3'
 
 gem 'pg'
 
-gem 'formtastic'
+gem 'formtastic', :git => "git://github.com/justinfrench/formtastic.git", :branch => 'rails3'
 gem 'nifty-generators'
 
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
