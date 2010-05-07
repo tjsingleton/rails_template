@@ -15,7 +15,7 @@ describe UserSessionsController do
 
   describe "POST authentications" do
     before(:each) do
-      @login = { :username => "user", :password => "pass", :remember_me => "0" }
+      @login = { :email => "foo@bar", :password => "pass", :remember_me => "0" }
       @user_session = mock_model(UserSession, @login)
     end
 
@@ -26,7 +26,7 @@ describe UserSessionsController do
       end
 
       it "displays welcome message and redirects to the home page" do
-        @user = Factory(:user, :username => "user", :password => "pass", :password_confirmation => "pass",
+        @user = Factory(:user, :email => "foo@bar.com", :password => "pass", :password_confirmation => "pass", 
                         :login_count => 0)
         @user_session.stub!(:user).and_return(@user)
 
@@ -37,7 +37,7 @@ describe UserSessionsController do
       end
 
       it "displays last login time if it's not the first login" do
-        @user = Factory(:user, :username => "user", :password => "pass", :password_confirmation => "pass",
+        @user = Factory(:user, :email => "foo@bar.com", :password => "pass", :password_confirmation => "pass",
                         :login_count => 42, :last_login_at => 1.hour.ago)
         @user_session.stub!(:user).and_return(@user)
 
@@ -49,8 +49,8 @@ describe UserSessionsController do
 
     describe "authenticaion failure" do
       describe "user is not suspended" do
-        it "redirects to login page if username or password are invalid" do
-          @user = Factory(:user, :username => "user", :password => "pass", :password_confirmation => "pass")
+        it "redirects to login page if email or password are invalid" do
+          @user = Factory(:user, :email => "foo@bar.com", :password => "pass", :password_confirmation => "pass")
           @user_session.stub!(:user).and_return(@user)
           @user_session.stub!(:save).and_return(false) # <--- Authentication failure.
           UserSession.stub!(:new).and_return(@user_session)

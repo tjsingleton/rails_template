@@ -3,27 +3,11 @@ require 'spec_helper'
 describe User do
   before(:each) do
     @valid_attributes = {
-      :username => "username",
       :password => "password",
       :password_confirmation => "password",
-      :email => "user@example.com",
-      :phone => "+380665555555"
+      :email => "user@example.com"
     }
   end
-  describe "Validations" do
-    before(:each) do
-      @user = User.new
-    end
-    it "should require phone" do
-      @user.attributes = @valid_attributes.except(:phone)
-      @user.should_not be_valid
-      @user.errors.on(:phone).should eql("can't be blank")
-      @user.phone = "+380665555555"
-      @user.should be_valid
-    end
-  end
-
-
 
   it "should create a new instance given valid attributes" do
     User.create!(@valid_attributes)

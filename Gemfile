@@ -29,13 +29,14 @@ group :test do
   
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'test-unit'         # required for cucumber-rails until 0.3.1, see: https://rspec.lighthouseapp.com/projects/16211/tickets/588-no-such-file-to-load-testunittestresult
   gem 'cucumber-rails'
   gem 'cucumber',         '0.7.2'
   gem 'launchy'
   gem 'email_spec'
   
   gem 'spork'
-  gem 'hydra'
+  gem "hydra", :git => "git://github.com/albus522/hydra.git"
 end
 
 group :development, :test do

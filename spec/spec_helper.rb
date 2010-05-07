@@ -9,6 +9,8 @@ require 'email_spec'
 # in ./support/ and its subdirectories.
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
+ActiveRecord::TestCase.use_concurrent_connections
+
 Rspec.configure do |config|
   # == Mock Framework
   #
