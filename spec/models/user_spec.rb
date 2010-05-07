@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-  before(:each) do
+  before do
     @valid_attributes = {
       :password => "password",
       :password_confirmation => "password",
@@ -14,7 +14,7 @@ describe User do
   end
 
   describe "should destroy the users unless she has no related assets" do
-    before(:each) do
+    before do
       @user = Factory(:user)
     end
 
