@@ -10,7 +10,7 @@ describe User do
   end
 
   it "should create a new instance given valid attributes" do
-    User.create!(@valid_attributes)
+    User.build(@valid_attributes).should be_valid
   end
 
   describe "should destroy the users unless she has no related assets" do
