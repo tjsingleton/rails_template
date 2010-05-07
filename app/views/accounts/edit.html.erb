@@ -1,5 +1,13 @@
 <% title "Edit Profile" %>
 
+<p>Email: <%= @user.email %></p>
+<p>Access Token: <%= @user.single_access_token %></p>
+<p>
+  You currently logged in on <%= @user.current_login_at %> from <%= @user.current_login_ip %>.
+  <% if @user.last_login_at %>You last logged in on <%= @user.last_login_at %> from <%= @user.last_login_ip %>.<% end %>
+  Your account was created on <%= @user.created_at %>.
+</p>
+
 <%= semantic_form_for @user, :url => user_path(@user) do |f| %>
   <%= render :partial => 'form', :locals => {:f => f} %>
 <% end %>
