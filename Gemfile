@@ -22,12 +22,12 @@ gem 'builder'
 group :test do
   gem 'factory_girl', :git => 'git://github.com/thoughtbot/factory_girl.git', :branch => 'rails3'
   gem 'ffaker'
-  
+
   gem 'rspec'
   gem 'rspec-rails',      '>= 2.0.0.beta'
   gem 'autotest'
   gem 'autotest-rails'
-  
+
   gem 'capybara'
   gem 'database_cleaner'
   gem 'test-unit'         # required for cucumber-rails until 0.3.1, see: https://rspec.lighthouseapp.com/projects/16211/tickets/588-no-such-file-to-load-testunittestresult
@@ -35,7 +35,7 @@ group :test do
   gem 'cucumber',         '0.7.2'
   gem 'launchy'
   gem 'email_spec'
-  
+
   gem 'spork'
   gem "hydra", :git => "git://github.com/albus522/hydra.git"
 end

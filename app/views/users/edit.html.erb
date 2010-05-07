@@ -1,4 +1,6 @@
 <% title "Edit Profile" %>
 
-<%= render :partial => 'form' %>
+<%= semantic_form_for @user, :url => user_path(@user) do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>
 
