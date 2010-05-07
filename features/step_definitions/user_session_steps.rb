@@ -3,16 +3,16 @@ Given /^a user with the email "([^"]+)"(?: and password "([^"]+)")?$/ do |email,
   User.create(:email => email, :password => password, :password_confirmation => password)
 end
 
-Then /^I should be logged in as "([^\"]*)"$/ do |email|
-  UserSession.find.user.email.should == email
-end
-
 When /^I log in as "([^\"]*)" and password "([^\"]*)"$/ do |email, password|
   password ||= "password"
   visit path_to('the login page')
   fill_in('user_session_email', :with => email)
   fill_in('user_session_password', :with => password)
   click_button('Login')
+end
+
+Then /^I should be logged in as "([^\"]*)"$/ do |email|
+  UserSession.find.user.email.should == email
 end
 
 Then /^no one should be logged in$/ do

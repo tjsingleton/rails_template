@@ -7,17 +7,23 @@ Feature: Manage User Sessions
     Given a user with the email "user@server.com" and password "password"
     When I log in as "user@server.com" and password "password"
     Then I should be logged in as "user@server.com"
+    And I should see "Login successful!"
+    And I should see "Edit profile"
+    And I should see "Logout"
 
   Scenario: When I login with bad info
     Given I am not registered
     When I log in as "user@server.com" and password "password"
     Then no one should be logged in
+    And I should see "Please provide a valid email address and password."
+    And I should not see "Logout"
 
   Scenario: When I logout
     Given a user with the email "user@server.com" and password "password"
     When I log in as "user@server.com" and password "password"
     And I go to the logout page
     Then no one should be logged in
+    And I should see "Logout successful!"
 
   Scenario: When I request a password reset
     Given a user with the email "user@server.com" and password "password"
