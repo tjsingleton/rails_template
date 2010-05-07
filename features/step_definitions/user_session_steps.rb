@@ -28,13 +28,14 @@ When /^I request to reset my password as "([^\"]*)"$/ do |email|
   fill_in('email', :with => email)
   click_button('Reset my password')
 end
+
 When /^I reset my password as "([^\"]*)" to password "([^\"]*)"(?: and confirmation "([^"]+)")?$/ do |email, password, confirmation|
   confirmation ||= password
   user = User.find_by_email email
   visit edit_password_reset_path(user.perishable_token)
   fill_in('user_password', :with => password)
   fill_in('user_password_confirmation', :with => confirmation)
-  click_button("Update my password and log me in")
+  click_button("Update User")
 end
 
 When /^I reset my password with a bad token$/ do
