@@ -1,7 +1,10 @@
 <% title "Change My Password" %>
 
-<%= form_for @user, :url => password_reset_path(@user.perishable_token), :method => :put do |f| %>
-  <p><%= f.label :password %> <%= f.password_field :password %></p>
-  <p><%= f.label :password_confirmation %> <%= f.password_field :password_confirmation %></p>
-  <p><%= f.submit "Update my password and log me in" %></p>
+<%= semantic_form_for @user, :url => password_reset_path(@user.perishable_token) do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+  <% end %>
+  <%= f.buttons %>
 <% end %>
