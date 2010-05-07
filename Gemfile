@@ -37,7 +37,7 @@ group :test do
   gem 'email_spec'
 
   gem 'spork'
-  gem "hydra", :git => "git://github.com/albus522/hydra.git"
+  gem "hydra", :git => "git://github.com/tjsingleton/hydra.git"
 end
 
 group :development, :test do
