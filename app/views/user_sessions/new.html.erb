@@ -4,7 +4,7 @@
   <%= f.inputs do %>
     <%= f.input :email %>
     <%= f.input :password %>
-    <%= f.input :remember_me, :as => :check_boxes, :collection => ["Remember Me"], :label => "&nbsp;", :required => false %>
+    <%= f.input :remember_me, :as => :boolean, :required => false %>
   <% end %>
   <%= f.buttons do %>
     <%= f.commit_button "Login" %>
