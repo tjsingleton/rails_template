@@ -48,7 +48,7 @@ Feature: Manage User Sessions
 
   Scenario: When I reset my password mismatched passwords
     Given a user with the email "user@server.com" and password "password"
-    When I reset my password as "user@server.com" to password "newpass" and confirmation "paswsord"
+    When I reset my password as "user@server.com" to password "newpass" and confirmation "badpass"
     Then I should see "Password doesn't match confirmation"
 
   Scenario: On failed login my email address should be filled on the password reset page
