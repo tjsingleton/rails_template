@@ -7,10 +7,10 @@ gem 'rails', '3.0.0.beta3'
 
 gem 'pg'
 
-gem 'formtastic', :git => "git://github.com/justinfrench/formtastic.git", :branch => 'rails3'
+gem 'formtastic',         :git => "git://github.com/justinfrench/formtastic.git", :branch => 'rails3'
 gem 'nifty-generators'
 
-gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+gem 'authlogic',          :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 gem 'bcrypt-ruby'
 
 #Heroku
@@ -20,7 +20,7 @@ gem 'mime-types'
 gem 'builder'
 
 group :test do
-  gem 'factory_girl', :git => 'git://github.com/thoughtbot/factory_girl.git', :branch => 'rails3'
+  gem 'factory_girl',     :git => 'git://github.com/thoughtbot/factory_girl.git', :branch => 'rails3'
   gem 'ffaker'
 
   gem 'rspec'
@@ -34,16 +34,16 @@ group :test do
   gem 'cucumber-rails'
   gem 'cucumber',         '0.7.2'
   gem 'launchy'
-  gem 'pickle'
+  gem 'pickle',           :git => 'git://github.com/codegram/pickle.git'
   gem 'email_spec'
 
   gem 'spork'
-  gem "hydra", :git => "git://github.com/tjsingleton/hydra.git"
+  gem "hydra",            :git => "git://github.com/tjsingleton/hydra.git"
 end
 
 group :development, :test do
   gem 'wirble'
-  gem 'ruby-debug19' # does not support 1.9.2
+  gem 'ruby-debug19'      # does not support 1.9.2
 end
 
 # Use unicorn as the web server
