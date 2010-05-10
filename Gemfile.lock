@@ -1,5 +1,5 @@
 --- 
-hash: 976ac4c21f32d159f70e596276b2a27585691f7e
+hash: 830e701c5dbdd92e81ee4afdb405d02370194a45
 sources: 
 - Git: 
     git: git://github.com/tjsingleton/hydra.git
@@ -109,7 +109,7 @@ specs:
 - trollop: 
     version: 1.16.2
 - gherkin: 
-    version: 1.0.24
+    version: 1.0.26
 - term-ansicolor: 
     version: 1.0.5
 - cucumber: 
@@ -124,7 +124,7 @@ specs:
     version: 1.2.3
     source: 1
 - ffaker: 
-    version: 0.3.7
+    version: 0.4.0
 - formtastic: 
     version: 0.9.8
     source: 3
@@ -141,6 +141,8 @@ specs:
     version: 0.4.0
 - pg: 
     version: 0.9.0
+- pickle: 
+    version: 0.2.10
 - thor: 
     version: 0.13.6
 - railties: 
@@ -255,6 +257,10 @@ dependencies:
     group: 
     - :test
   launchy: 
+    version: ">= 0"
+    group: 
+    - :test
+  pickle: 
     version: ">= 0"
     group: 
     - :test

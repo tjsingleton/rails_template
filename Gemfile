@@ -34,6 +34,7 @@ group :test do
   gem 'cucumber-rails'
   gem 'cucumber',         '0.7.2'
   gem 'launchy'
+  gem 'pickle'
   gem 'email_spec'
 
   gem 'spork'
