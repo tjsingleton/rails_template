@@ -5,6 +5,8 @@
 # files.
 
 ENV["RAILS_ENV"] ||= "test"
+# For rubymine. 
+ENV["RAILS_ENV"] = "test" if ENV["RAILS_ENV"] == "cucumber"
 require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
 
 require 'cucumber/formatter/unicode' # Remove this line if you don't want Cucumber Unicode support
