@@ -35,7 +35,7 @@ group :test do
   gem 'cucumber',         '0.7.2'
   gem 'launchy'
   gem 'pickle',           :git => 'git://github.com/codegram/pickle.git'
-  gem 'email_spec'
+  gem 'email_spec',       :git => 'git://github.com/bmabey/email-spec.git', :branch => 'rails3'
 
   gem 'spork'
   gem "hydra",            :git => "git://github.com/tjsingleton/hydra.git"
