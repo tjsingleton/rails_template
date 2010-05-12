@@ -44,10 +44,28 @@ end
 
 When /^I register as "([^\"]*)" with password "([^\"]*)"(?: and confirmation "([^\"]*)")?$/ do |email, password, confirmation|
   confirmation ||= password
-  user = User.find_by_email email
   visit path_to('the new account page')
   fill_in('user_email', :with => email)
   fill_in('user_password', :with => password)
   fill_in('user_password_confirmation', :with => confirmation)
   click_button("Create User")
 end
+
+When /^I update my email (?:to|with) "([^\"]*)"$/ do |email|
+  steps %Q{
+    When I go to the edit account page
+    And I fill in "Email" with "#{email}"
+    And I press "Update User"
+  }
+end
+
+When /^I update my password (?:to|with) "([^\"]*)" and confirmation "([^\"]*)"$/ do |password, confirmation|
+  steps %Q{
+    When I go to the edit account page
+    And I fill in "Password" with "#{password}"
+    And I fill in "Password confirmation" with "#{confirmation}"
+    And press "Update User"
+  }
+end
+
+

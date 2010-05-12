@@ -3,7 +3,6 @@ Feature: Manage accounts
   a user
   wants to manage his account
 
-  @wip
   Scenario: My Account
     Given a user with the email "user@server.com" and password "password"
     And I log in as "user@server.com" and password "password"
@@ -28,34 +27,24 @@ Feature: Manage accounts
   Scenario: Edit account to change email address
     Given a user with the email "user@server.com" and password "password"
     And I log in as "user@server.com" and password "password"
-    When I go to the edit account page
-    And I fill in "Email" with "bob@server.com"
-    And press "Update User"
+    When I update my email to "bob@server.com"
     Then I should see "Successfully updated profile."
 
   Scenario: Edit account to change email address to an existing email address
     Given a user with the email "user@server.com" and password "password"
     And a user with the email "bob@server.com" and password "password"
     And I log in as "user@server.com" and password "password"
-    When I go to the edit account page
-    And I fill in "Email" with "bob@server.com"
-    And press "Update User"
+    When I update my email to "bob@server.com"
     Then I should see "has already been taken"
 
   Scenario: Edit account to change password
     Given a user with the email "user@server.com" and password "password"
     And I log in as "user@server.com" and password "password"
-    When I go to the edit account page
-    And I fill in "Password" with "newpass"
-    And I fill in "Password confirmation" with "newpass"
-    And press "Update User"
+    When I update my password to "newpass" and confirmation "newpass"
     Then I should see "Successfully updated profile."
 
   Scenario: Edit account to change password with mismatched password
     Given a user with the email "user@server.com" and password "password"
     And I log in as "user@server.com" and password "password"
-    When I go to the edit account page
-    And I fill in "Password" with "newpass"
-    And I fill in "Password confirmation" with "badpass"
-    And press "Update User"
+    When I update my password to "newpass" and confirmation "badpass"
     Then I should see "doesn't match confirmation"
