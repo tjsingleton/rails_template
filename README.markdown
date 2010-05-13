@@ -143,7 +143,7 @@ Install the heroku gem locally:
     http://docs.heroku.com/quickstart
 
 Setup your apps using:
-    git clone git@github.com:adamblack50/crunch.git crunch
+    git clone git@github.com:databyte/crunch.git crunch
     git remote add production git@heroku.com:crunch.git
     git remote add staging git@heroku.com:crunch-staging.git
 
