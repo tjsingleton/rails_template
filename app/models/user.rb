@@ -4,6 +4,14 @@ class User < ActiveRecord::Base
     c.crypto_provider = Authlogic::CryptoProviders::BCrypt
   end
 
+  has_many :roles
+
+  ##
+  # Array of the user's roles as symbols for use with declarative_authorization  
+  def role_symbols
+    (roles || []).map {|r| r.title.to_sym}
+  end
+
   # Store current user in the class so we could access it from the activity observer without extra authentication query.
   cattr_accessor :current_user
 
