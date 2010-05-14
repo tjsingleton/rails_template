@@ -1,5 +1,5 @@
 --- 
-hash: 1b2c8004ccf438e912957974901fe7fcb8bf41dc
+hash: 5be22ab49c73af7aef60462c726e154099825329
 sources: 
 - Git: 
     git: git://github.com/tjsingleton/hydra.git
@@ -20,9 +20,9 @@ sources:
     uri: git://github.com/thoughtbot/factory_girl.git
     ref: feac7298352a83fef0717d8beadd2eda9aabfe56
 - Git: 
-    git: http://github.com/stffn/declarative_authorization.git
-    uri: http://github.com/stffn/declarative_authorization.git
-    ref: 3d7dce334a1b601e0ac6d4f7956e424760b7292d
+    git: http://github.com/tjsingleton/declarative_authorization.git
+    uri: http://github.com/tjsingleton/declarative_authorization.git
+    ref: 30c9906484db68b0c65aa5720463544e274ba456
 - Git: 
     git: git://github.com/odorcicd/authlogic.git
     branch: rails3
