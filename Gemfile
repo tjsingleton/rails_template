@@ -12,6 +12,8 @@ gem 'nifty-generators'
 
 gem 'authlogic',          :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 gem 'bcrypt-ruby'
+gem 'declarative_authorization', :git => 'http://github.com/tjsingleton/declarative_authorization.git'
+gem 'ruby_parser'
 
 #Heroku
 gem 'aws-s3'
@@ -43,6 +45,7 @@ end
 
 group :development, :test do
   gem 'wirble'
+  gem 'hirb'
   gem 'ruby-debug19'      # does not support 1.9.2
 end
 
