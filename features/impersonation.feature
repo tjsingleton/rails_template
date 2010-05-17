@@ -1,6 +1,6 @@
 Feature: Impersonation
   In order to access users accounts
-  As a admin
+  As an admin
   I want to impersonation other users
 
   Scenario: Logged in as a normal user
