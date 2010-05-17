@@ -11,6 +11,14 @@ When /^I log in as "([^\"]*)" and password "([^\"]*)"$/ do |email, password|
   click_button('Login')
 end
 
+Given /^a logged in user with the email "([^"]+)"(?: and password "([^"]+)")?$/ do |email, password|
+  password ||= "password"
+  steps %Q{
+    Given a user with the email "user@example.com" and password "password"
+    And I log in as "user@example.com" and password "password"
+  }
+end
+
 Then /^I should be logged in as "([^\"]*)"$/ do |email|
   UserSession.find.user.email.should == email
 end
