@@ -11,12 +11,17 @@ When /^I log in as "([^\"]*)" and password "([^\"]*)"$/ do |email, password|
   click_button('Login')
 end
 
-Given /^a logged in user with the email "([^"]+)"(?: and password "([^"]+)")?$/ do |email, password|
+Given /^a logged in (user|admin) with the email "([^"]+)"(?: and password "([^"]+)")?$/ do |role, email, password|
   password ||= "password"
   steps %Q{
-    Given a user with the email "user@example.com" and password "password"
-    And I log in as "user@example.com" and password "password"
+    Given a user with the email "#{email}" and password "#{password}"
+    And I log in as "#{email}" and password "#{password}"
   }
+  if role == "admin"
+    user = User.find_by_email email
+    admin_role = Role.find_or_create_by_title "admin"
+    user.roles << admin_role
+  end
 end
 
 Then /^I should be logged in as "([^\"]*)"$/ do |email|

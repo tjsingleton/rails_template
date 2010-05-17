@@ -1,4 +1,6 @@
 class ImpersonationsController < ApplicationController
+  filter_access_to :all, :require => :read
+
   def new
     @users = User.where("id <> ?", current_user.id)
     if @users.empty?
