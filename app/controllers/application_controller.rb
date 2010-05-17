@@ -4,4 +4,13 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
   layout 'application'
+
+  before_filter :set_current_user
+
+  protected
+  ##
+  # Establish current user for declarative authorization
+  def set_current_user
+    Authorization.current_user = current_user
+  end
 end
