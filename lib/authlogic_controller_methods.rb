@@ -1,7 +1,7 @@
 module AuthlogicControllerMethods
   private
   def current_user_session
-    @current_user_session ||= UserSession.find
+    @current_user_session ||= UserSession.find(:impersonation) || UserSession.find 
   end
 
   def current_user

@@ -1,6 +1,8 @@
 Crunch::Application.routes.draw do |map|
   resource :account
   resource :user_session
+  resource :impersonation
+  
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
 

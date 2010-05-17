@@ -1,0 +1,5 @@
+<%= form_tag impersonation_path do %>
+  <%= label :user, :id, "User" %>
+  <%= collection_select :user, :id, @users, :id, :email  %>
+  <%= submit_tag "Impersonate" %>
+<% end %>
