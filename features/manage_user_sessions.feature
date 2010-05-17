@@ -1,7 +1,7 @@
 Feature: Manage User Sessions
   In order to provide authentication
-  the user
-  wants to manage his session
+  As a user
+  I want to manage my session
 
   Scenario: When I login
     Given a user with the email "user@example.com" and password "password"

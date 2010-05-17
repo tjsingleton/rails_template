@@ -1,7 +1,7 @@
 Feature: Manage accounts
   In order to keep my information up to date
-  a user
-  wants to manage his account
+  As a user
+  I want to manage the account
 
   Scenario: My Account
     Given a user with the email "user@example.com" and password "password"
