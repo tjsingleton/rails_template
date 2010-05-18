@@ -7,6 +7,8 @@
       <th>Email</th>
       <th>Created</th>
       <th>Updated</th>
+      <th>Approved</th>
+      <td></td>
       <td></td>
     </tr>
     <% @users.each do |user| %>
@@ -16,16 +18,23 @@
       <td><%= time_ago_in_words user.created_at %></td>
       <td><%= time_ago_in_words user.updated_at %></td>
       <td>
-      <%= form_tag impersonation_path do %>
-        <%= hidden_field_tag "user[id]", user.id  %>
-        <%= submit_tag "Impersonate" %>
-      <% end %>
-      <% unless user.approved? %>
-        <%= form_for user, :url => admin_user_path(user) do |f| %>
-          <%= f.hidden_field :approved, :value => true %>
-          <%= f.submit "Approve" %>
+        <% if user.approved? %>
+          Yes
+        <% else %>
+          <%= form_for user, :url => admin_user_path(user) do |f| %>
+            <%= f.hidden_field :approved, :value => true %>
+            <%= f.submit "Approve" %>
+          <% end %>
         <% end %>
-      <% end %>
+      </td>
+      <td>
+        <%= form_tag impersonation_path do %>
+          <%= hidden_field_tag "user[id]", user.id  %>
+          <%= submit_tag "Impersonate" %>
+        <% end %>
+      </td>
+      <td>
+        <%= button_to "Delete", admin_user_path(user), :confirm => "Are you sure?", :method => :delete %>
       </td>
     </tr>
     <% end %>

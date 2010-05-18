@@ -29,3 +29,13 @@ Feature: User management
     When I am on the admin users page
     And I press "Approve"
     Then I should see "Successfully updated user." within "#flash_notice"
+
+#  @javascript 
+  Scenario: Deleting a user
+    Given a logged in admin with the email "user@example.com"
+    And the following users exist
+       | email            | approved |
+       | test@example.com | false    |
+    When I am on the admin users page
+    And I press "Delete" within "tr:last-child"
+    Then I should see "Successfully deleted user." within "#flash_notice"
