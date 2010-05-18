@@ -13,6 +13,7 @@ Feature: Manage accounts
     Given I am not registered
     When I register as "user@example.com" with password "password"
     Then I should see "Registration successful."
+    And "user@example.com" should receive an email
 
   Scenario: Create new account with mismatched password
     Given I am not registered

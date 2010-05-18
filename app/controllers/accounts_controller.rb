@@ -6,6 +6,7 @@ class AccountsController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      UserNotification.new_account_email(@user).deliver
       flash[:notice] = 'Registration successful.'
       redirect_to root_url
     else
