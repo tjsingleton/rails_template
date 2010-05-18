@@ -10,10 +10,15 @@ class ImpersonationsController < ApplicationController
   end
 
   def create
-    user = User.find_by_id params[:user][:id]
-    @current_user_session = UserSession.new
-    @current_user_session.credentials = [user, false, :impersonation]
-    @current_user_session.save
-    redirect_to root_url
+    user_id = params[:user] && params[:user][:id]
+    if user_id && user = User.find(user_id)
+      @current_user_session = UserSession.new
+      @current_user_session.credentials = [user, false, :impersonation]
+      @current_user_session.save
+      redirect_to root_url
+    else
+      flash[:error] = "Could not find user to impersonate."
+      redirect_to root_url
+    end
   end
 end
