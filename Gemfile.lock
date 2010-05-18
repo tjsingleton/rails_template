@@ -1,5 +1,5 @@
 --- 
-hash: 5703bd00699d0cce949e0b95ee55ef20d2cb3160
+hash: 25637222c01d76ffd553f8bf91d7d28be6c56be6
 sources: 
 - Git: 
     git: git://github.com/tjsingleton/hydra.git
@@ -45,9 +45,9 @@ sources:
     uri: http://github.com/mislav/will_paginate.git
     ref: 60aa1c7b2ef03ee7c7a5ed657efb479a69f7d128
 - Git: 
-    git: git://github.com/stffn/declarative_authorization.git
-    uri: git://github.com/stffn/declarative_authorization.git
-    ref: 81a299100c4596e448179031252863fe162755db
+    git: git://github.com/tjsingleton/declarative_authorization.git
+    uri: git://github.com/tjsingleton/declarative_authorization.git
+    ref: d241f518485a18a8b37c3b8469c60e4f0eda086f
 - Git: 
     git: git://github.com/odorcicd/authlogic.git
     branch: rails3
