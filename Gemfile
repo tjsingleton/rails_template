@@ -16,7 +16,7 @@ gem 'bcrypt-ruby'
 gem 'declarative_authorization', :git => 'http://github.com/tjsingleton/declarative_authorization.git'
 gem 'ruby_parser'
 
-gem "will_paginate", :git => "http://github.com/mislav/will_paginate.git", :branch => "rails3" 
+gem "will_paginate", :git => "http://github.com/mislav/will_paginate.git", :branch => "rails3"
 
 #Heroku
 gem 'aws-s3'
@@ -30,6 +30,9 @@ group :test do
 
   gem 'rspec',            :git => 'git://github.com/rspec/rspec.git'
   gem 'rspec-rails',      :git => 'git://github.com/rspec/rspec-rails.git'
+  gem 'rspec-core',       :git => 'git://github.com/rspec/rspec-core.git'
+  gem 'rspec-expectations',       :git => 'git://github.com/rspec/rspec-expectations.git'
+  gem 'rspec-mocks',       :git => 'git://github.com/rspec/rspec-mocks.git'
   gem 'autotest'
   gem 'autotest-rails'
 

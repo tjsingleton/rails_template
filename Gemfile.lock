@@ -1,5 +1,5 @@
 --- 
-hash: 6f26168a9e21edef42f1a50a91d0f1ed8d5794a7
+hash: b8af30ed61dc1f8fd2e6c7cc710e08d758f41dc6
 sources: 
 - Git: 
     git: git://github.com/tjsingleton/hydra.git
@@ -14,6 +14,18 @@ sources:
     git: git://github.com/codegram/pickle.git
     uri: git://github.com/codegram/pickle.git
     ref: 929ee633e95d44f54abb2bab2dc50fa17738d5e7
+- Git: 
+    git: git://github.com/rspec/rspec-mocks.git
+    uri: git://github.com/rspec/rspec-mocks.git
+    ref: daa9b054757831c76fbc4c8c2880e0859a771355
+- Git: 
+    git: git://github.com/rspec/rspec-expectations.git
+    uri: git://github.com/rspec/rspec-expectations.git
+    ref: ba95bb14b82dcd17c3dc0c6e79bc2ef27409668f
+- Git: 
+    git: git://github.com/rspec/rspec-core.git
+    uri: git://github.com/rspec/rspec-core.git
+    ref: 68ded0777791d52bbf99a03739d83f63f2dc399c
 - Git: 
     git: git://github.com/rspec/rspec-rails.git
     uri: git://github.com/rspec/rspec-rails.git
@@ -101,7 +113,7 @@ specs:
     version: 0.5.2
 - authlogic: 
     version: 2.1.3
-    source: 8
+    source: 11
 - autotest: 
     version: 4.2.10
 - autotest-rails: 
@@ -152,18 +164,18 @@ specs:
     version: 3.0.0.beta3
 - declarative_authorization: 
     version: 0.4.1
-    source: 7
+    source: 10
 - email_spec: 
     version: 0.6.2
     source: 1
 - factory_girl: 
     version: 1.2.3
-    source: 5
+    source: 8
 - ffaker: 
     version: 0.4.0
 - formtastic: 
     version: 0.9.8
-    source: 9
+    source: 12
 - hirb: 
     version: 0.3.1
 - hydra: 
@@ -184,18 +196,21 @@ specs:
     source: 2
 - rspec-core: 
     version: 2.0.0.beta.8
+    source: 5
 - rspec-expectations: 
     version: 2.0.0.beta.8
+    source: 4
 - rspec-mocks: 
     version: 2.0.0.beta.8
+    source: 3
 - rspec: 
     version: 2.0.0.beta.8
-    source: 4
+    source: 7
 - webrat: 
     version: 0.7.1
 - rspec-rails: 
     version: 2.0.0.beta.8
-    source: 3
+    source: 6
 - ruby-debug-base19: 
     version: 0.11.23
 - ruby-debug19: 
@@ -210,7 +225,7 @@ specs:
     version: 2.0.7
 - will_paginate: 
     version: 3.0.pre
-    source: 6
+    source: 9
 - wirble: 
     version: 0.1.3
 dependencies: 
@@ -279,6 +294,18 @@ dependencies:
     group: 
     - :test
   rspec-rails: 
+    version: ">= 0"
+    group: 
+    - :test
+  rspec-core: 
+    version: ">= 0"
+    group: 
+    - :test
+  rspec-expectations: 
+    version: ">= 0"
+    group: 
+    - :test
+  rspec-mocks: 
     version: ">= 0"
     group: 
     - :test
