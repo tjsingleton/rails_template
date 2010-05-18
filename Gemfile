@@ -14,6 +14,8 @@ gem 'authlogic',          :git => 'git://github.com/odorcicd/authlogic.git', :br
 gem 'bcrypt-ruby'
 
 gem 'declarative_authorization', :git => 'git://github.com/stffn/declarative_authorization.git'
+#gem 'declarative_authorization', :git => 'git://github.com/tjsingleton/declarative_authorization.git'
+#gem 'declarative_authorization',  :path => "~/Projects/Personal/declarative_authorization"
 gem 'ruby_parser'
 
 gem "will_paginate", :git => "http://github.com/mislav/will_paginate.git", :branch => "rails3"

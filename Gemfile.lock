@@ -1,5 +1,5 @@
 --- 
-hash: cb5a5049082ca829f09e487b6cb860ff77be6e8a
+hash: 669379a61a1465e51fdab69e07f0cf406782933d
 sources: 
 - Git: 
     git: git://github.com/tjsingleton/hydra.git
@@ -44,10 +44,9 @@ sources:
     branch: rails3
     uri: http://github.com/mislav/will_paginate.git
     ref: 60aa1c7b2ef03ee7c7a5ed657efb479a69f7d128
-- Git: 
-    git: git://github.com/stffn/declarative_authorization.git
-    uri: git://github.com/stffn/declarative_authorization.git
-    ref: 81a299100c4596e448179031252863fe162755db
+- Path: 
+    path: !ruby/object:Pathname 
+      path: ~/Projects/Personal/declarative_authorization
 - Git: 
     git: git://github.com/odorcicd/authlogic.git
     branch: rails3
