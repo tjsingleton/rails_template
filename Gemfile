@@ -28,8 +28,8 @@ group :test do
   gem 'factory_girl',     :git => 'git://github.com/thoughtbot/factory_girl.git', :branch => 'rails3'
   gem 'ffaker'
 
-  gem 'rspec'
-  gem 'rspec-rails',      '>= 2.0.0.beta'
+  gem 'rspec',            :git => 'git://github.com/rspec/rspec.git'
+  gem 'rspec-rails',      :git => 'git://github.com/rspec/rspec-rails.git'
   gem 'autotest'
   gem 'autotest-rails'
 

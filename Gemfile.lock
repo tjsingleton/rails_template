@@ -1,5 +1,5 @@
 --- 
-hash: 5f0bff98e80a2a3407d049ffbe9866afdbaacd01
+hash: 6f26168a9e21edef42f1a50a91d0f1ed8d5794a7
 sources: 
 - Git: 
     git: git://github.com/tjsingleton/hydra.git
@@ -14,6 +14,14 @@ sources:
     git: git://github.com/codegram/pickle.git
     uri: git://github.com/codegram/pickle.git
     ref: 929ee633e95d44f54abb2bab2dc50fa17738d5e7
+- Git: 
+    git: git://github.com/rspec/rspec-rails.git
+    uri: git://github.com/rspec/rspec-rails.git
+    ref: b4052347d53fdd86e87f9c0a8408e742d3afdc24
+- Git: 
+    git: git://github.com/rspec/rspec.git
+    uri: git://github.com/rspec/rspec.git
+    ref: a0204173e54ff8ec21e2e4052b27ac5933f25196
 - Git: 
     git: git://github.com/thoughtbot/factory_girl.git
     branch: rails3
@@ -93,7 +101,7 @@ specs:
     version: 0.5.2
 - authlogic: 
     version: 2.1.3
-    source: 6
+    source: 8
 - autotest: 
     version: 4.2.10
 - autotest-rails: 
@@ -127,7 +135,7 @@ specs:
 - trollop: 
     version: 1.16.2
 - gherkin: 
-    version: 1.0.26
+    version: 1.0.27
 - term-ansicolor: 
     version: 1.0.5
 - cucumber: 
@@ -144,18 +152,18 @@ specs:
     version: 3.0.0.beta3
 - declarative_authorization: 
     version: 0.4.1
-    source: 5
+    source: 7
 - email_spec: 
     version: 0.6.2
     source: 1
 - factory_girl: 
     version: 1.2.3
-    source: 3
+    source: 5
 - ffaker: 
     version: 0.4.0
 - formtastic: 
     version: 0.9.8
-    source: 7
+    source: 9
 - hirb: 
     version: 0.3.1
 - hydra: 
@@ -182,10 +190,12 @@ specs:
     version: 2.0.0.beta.8
 - rspec: 
     version: 2.0.0.beta.8
+    source: 4
 - webrat: 
     version: 0.7.1
 - rspec-rails: 
     version: 2.0.0.beta.8
+    source: 3
 - ruby-debug-base19: 
     version: 0.11.23
 - ruby-debug19: 
@@ -200,7 +210,7 @@ specs:
     version: 2.0.7
 - will_paginate: 
     version: 3.0.pre
-    source: 4
+    source: 6
 - wirble: 
     version: 0.1.3
 dependencies: 
@@ -269,7 +279,7 @@ dependencies:
     group: 
     - :test
   rspec-rails: 
-    version: ">= 2.0.0.beta"
+    version: ">= 0"
     group: 
     - :test
   autotest: 
