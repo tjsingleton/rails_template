@@ -1,5 +1,5 @@
 --- 
-hash: 5be22ab49c73af7aef60462c726e154099825329
+hash: 5f0bff98e80a2a3407d049ffbe9866afdbaacd01
 sources: 
 - Git: 
     git: git://github.com/tjsingleton/hydra.git
@@ -19,6 +19,11 @@ sources:
     branch: rails3
     uri: git://github.com/thoughtbot/factory_girl.git
     ref: feac7298352a83fef0717d8beadd2eda9aabfe56
+- Git: 
+    git: http://github.com/mislav/will_paginate.git
+    branch: rails3
+    uri: http://github.com/mislav/will_paginate.git
+    ref: 60aa1c7b2ef03ee7c7a5ed657efb479a69f7d128
 - Git: 
     git: http://github.com/tjsingleton/declarative_authorization.git
     uri: http://github.com/tjsingleton/declarative_authorization.git
@@ -88,7 +93,7 @@ specs:
     version: 0.5.2
 - authlogic: 
     version: 2.1.3
-    source: 5
+    source: 6
 - autotest: 
     version: 4.2.10
 - autotest-rails: 
@@ -139,7 +144,7 @@ specs:
     version: 3.0.0.beta3
 - declarative_authorization: 
     version: 0.4.1
-    source: 4
+    source: 5
 - email_spec: 
     version: 0.6.2
     source: 1
@@ -150,7 +155,7 @@ specs:
     version: 0.4.0
 - formtastic: 
     version: 0.9.8
-    source: 6
+    source: 7
 - hirb: 
     version: 0.3.1
 - hydra: 
@@ -193,6 +198,9 @@ specs:
     version: 0.8.3
 - test-unit: 
     version: 2.0.7
+- will_paginate: 
+    version: 3.0.pre
+    source: 4
 - wirble: 
     version: 0.1.3
 dependencies: 
@@ -225,6 +233,10 @@ dependencies:
     group: 
     - :default
   ruby_parser: 
+    version: ">= 0"
+    group: 
+    - :default
+  will_paginate: 
     version: ">= 0"
     group: 
     - :default

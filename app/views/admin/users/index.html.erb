@@ -1,0 +1,28 @@
+<% title "Manage Users" %>
+<p><%= link_to "New User", new_account_path %></p>
+<% if @users.present? %>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Created</th>
+      <th>Updated</th>
+      <td></td>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.email %></td>
+      <td><%= time_ago_in_words user.created_at %></td>
+      <td><%= time_ago_in_words user.updated_at %></td>
+      <td>
+      <%= form_tag impersonation_path do %>
+        <%= hidden_field_tag "user[id]", user.id  %>
+        <%= submit_tag "Impersonate" %>
+      <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  <%= will_paginate @users %>
+<% end %>
