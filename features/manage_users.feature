@@ -3,6 +3,13 @@ Feature: User management
   As an admin
   I want to CRUD users
 
+  Scenario: Logged in as a normal user
+    Given a logged in user with the email "user@example.com"
+    When I am on the admin users page
+    Then I should be on the root page
+    And I should see "Sorry, you not allowed to access that page" within "#flash_error"
+
+
   Scenario:
     Given a logged in admin with the email "user@example.com"
     And the following users exist
