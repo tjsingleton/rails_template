@@ -13,7 +13,7 @@ gem 'nifty-generators'
 gem 'authlogic',          :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 gem 'bcrypt-ruby'
 
-gem 'declarative_authorization', :git => 'http://github.com/tjsingleton/declarative_authorization.git'
+gem 'declarative_authorization', :git => 'git://github.com/stffn/declarative_authorization.git'
 gem 'ruby_parser'
 
 gem "will_paginate", :git => "http://github.com/mislav/will_paginate.git", :branch => "rails3"
