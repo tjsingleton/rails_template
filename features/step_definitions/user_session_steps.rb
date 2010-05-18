@@ -17,10 +17,10 @@ Given /^a logged in (user|admin) with the email "([^"]+)"(?: and password "([^"]
     Given a user with the email "#{email}" and password "#{password}"
     And I log in as "#{email}" and password "#{password}"
   }
+  user = User.find_by_email email
   if role == "admin"
-    user = User.find_by_email email
-    admin_role = Role.find_or_create_by_title "admin"
-    user.roles << admin_role
+    user.role_mask = 4
+    user.save!
   end
 end
 

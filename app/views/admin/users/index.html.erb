@@ -7,6 +7,7 @@
       <th>Email</th>
       <th>Created</th>
       <th>Updated</th>
+      <th>Roles</th>
       <th>Approved</th>
       <td></td>
       <td></td>
@@ -17,6 +18,7 @@
       <td><%= user.email %></td>
       <td><%= time_ago_in_words user.created_at %></td>
       <td><%= time_ago_in_words user.updated_at %></td>
+      <td><%= user.role_symbols.join(", ") %></td>
       <td>
         <% if user.approved? %>
           Yes
