@@ -20,6 +20,12 @@
         <%= hidden_field_tag "user[id]", user.id  %>
         <%= submit_tag "Impersonate" %>
       <% end %>
+      <% unless user.approved? %>
+        <%= form_for user, :url => admin_user_path(user) do |f| %>
+          <%= f.hidden_field :approved, :value => true %>
+          <%= f.submit "Approve" %>
+        <% end %>
+      <% end %>
       </td>
     </tr>
     <% end %>

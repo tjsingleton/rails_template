@@ -1,6 +1,6 @@
 Given /^a user with the email "([^"]+)"(?: and password "([^"]+)")?$/ do |email, password|
   password ||= "password"
-  User.create(:email => email, :password => password, :password_confirmation => password)
+  User.create(:email => email, :password => password, :password_confirmation => password, :approved => true)
 end
 
 When /^I log in as "([^\"]*)" and password "([^\"]*)"$/ do |email, password|

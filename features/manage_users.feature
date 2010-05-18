@@ -9,8 +9,7 @@ Feature: User management
     Then I should be on the root page
     And I should see "Sorry, you not allowed to access that page" within "#flash_error"
 
-
-  Scenario:
+  Scenario: Viewing the index as an admin
     Given a logged in admin with the email "user@example.com"
     And the following users exist
        | email            |
@@ -22,3 +21,11 @@ Feature: User management
     And I should see "best@example.com"
     And I should see "west@example.com"
 
+  Scenario: Approving a user
+    Given a logged in admin with the email "user@example.com"
+    And the following users exist
+       | email            | approved |
+       | test@example.com | false    |
+    When I am on the admin users page
+    And I press "Approve"
+    Then I should see "Successfully updated user." within "#flash_notice"

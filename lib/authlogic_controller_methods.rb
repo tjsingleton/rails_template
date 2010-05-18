@@ -1,7 +1,7 @@
 module AuthlogicControllerMethods
   private
   def current_user_session
-    @current_user_session ||= UserSession.find(:impersonation) || UserSession.find 
+    @current_user_session ||= UserSession.find(:impersonation) || UserSession.find
   end
 
   def current_user
@@ -27,7 +27,7 @@ module AuthlogicControllerMethods
   end
 
   def store_location
-    session[:return_to] = request.request_uri
+    session[:return_to] = request.fullpath
   end
 
   def redirect_back_or_default(default)
