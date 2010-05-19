@@ -40,4 +40,17 @@ Factory.define :user do |u|
   u.updated_at          { Factory.next(:time) }
   u.created_at          { Factory.next(:time) }
   # u.suspended_at        nil
+  u.role_mask 2
+end
+
+Factory.define :guest, :parent => :user do |u|
+  u.role_mask 1
+end
+
+Factory.define :manager, :parent => :user do |u|
+  u.role_mask 4
+end
+
+Factory.define :admin, :parent => :user do |u|
+  u.role_mask 8
 end

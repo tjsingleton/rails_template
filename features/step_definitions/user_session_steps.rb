@@ -19,7 +19,7 @@ Given /^a logged in (user|admin) with the email "([^"]+)"(?: and password "([^"]
   }
   user = User.find_by_email email
   if role == "admin"
-    user.role_mask = 4
+    user.replace_roles([:admin])
     user.save!
   end
 end
