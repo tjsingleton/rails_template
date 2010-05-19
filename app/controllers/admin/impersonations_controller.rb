@@ -1,4 +1,4 @@
-class ImpersonationsController < ApplicationController
+class Admin::ImpersonationsController < ApplicationController
   filter_access_to :all, :require => :read
 
   def new
