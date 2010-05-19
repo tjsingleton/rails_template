@@ -7,7 +7,7 @@ Heroku Account
 Hosting
 
 * http://www.heroku.com
-* user: technical@salescrunch.com 
+* user: technical@example.com 
 * pass: TODO
 
 GitHub Account
@@ -15,8 +15,8 @@ GitHub Account
 
 Source control
 
-* https://github.com/salescrunch
-* user: salescrunch
+* https://github.com/example
+* user: example
 * pass: TODO
 
 Pivotal Tracker
@@ -40,7 +40,7 @@ Hoptoad
 
 This is used to track errors in production.
 
-* http://salescrunch.hoptoadapp.com
+* http://example.hoptoadapp.com
 * user: TODO
 * pass: TODO
 
@@ -61,8 +61,8 @@ Google Maps API
 Key for Google Maps API
 
 * http://code.google.com/apis/maps/signup.html
-* Account listed under david@salescrunch.com Google Account
-* http://salescrunch.com: TODO
+* Account listed under user@example.com Google Account
+* http://example.com: TODO
 
 Deployment to Heroku
 ====================
@@ -70,8 +70,8 @@ Deployment to Heroku
 Direct push to staging
 
     git push staging master
-    heroku rake db:migrate --app crunch-staging
-    heroku restart --app crunch-staging
+    heroku rake db:migrate --app example-staging
+    heroku restart --app example-staging
 
 Rake task for deployment that does the following actions: push, restart, and tag
 
@@ -81,18 +81,13 @@ And if migrations exist, this will: push, app off, migrate, restart, app on, and
 
 `rake deploy:migrations`
 
-TODO:
-* heroku to handle compass
-* handle production (vlad-like rake argument)
-* backup task exists, need to integrate into current deployment sequence
-
 Development Setup
 =================
 
 Tests
 -----
 
-Using RSpec.
+Using Rspec.
 
 Memcached
 ---------
@@ -128,8 +123,8 @@ Heroku uses v8.3 and not v8.4
      postgres     | postgres | UTF8
      template0    | postgres | UTF8
      template1    | postgres | UTF8
-    postgres=# create database crunch_dev;
-    postgres=# create database crunch_test;
+    postgres=# create database example_dev;
+    postgres=# create database example_test;
     postgres=# \q
  
     # install pg gem
@@ -143,23 +138,23 @@ Install the heroku gem locally:
     http://docs.heroku.com/quickstart
 
 Setup your apps using:
-    git clone git@github.com:databyte/crunch.git crunch
-    git remote add production git@heroku.com:crunch.git
-    git remote add staging git@heroku.com:crunch-staging.git
+    git clone git@github.com:example/example.git example
+    git remote add production git@heroku.com:example.git
+    git remote add staging git@heroku.com:example-staging.git
 
 Push to staging all you want with:
     git push staging master
 
 Access the server at:
-    http://crunch-staging.heroku.com
-    user: admin@crunch.com
+    http://example-staging.heroku.com
+    user: admin@example.com
     pass: admin
 
 Debug remotely:
-    heroku logs --app crunch-staging
-    heroku restart --app crunch-staging
-    heroku console --app crunch-staging
+    heroku logs --app example-staging
+    heroku restart --app example-staging
+    heroku console --app example-staging
 
 Copy database to local (assuming you have Postgres setup locally):
-    heroku db:pull postgres://postgres:_pass_@localhost/crunch_development --app crunch
+    heroku db:pull postgres://postgres:_pass_@localhost/example_development --app example
 
