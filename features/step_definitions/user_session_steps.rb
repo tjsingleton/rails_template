@@ -1,6 +1,12 @@
 Given /^a user with the email "([^"]+)"(?: and password "([^"]+)")?$/ do |email, password|
   password ||= "password"
-  User.create(:email => email, :password => password, :password_confirmation => password, :approved => true)
+  user = Factory(:user,
+                 :email => email,
+                 :password => password,
+                 :password_confirmation => password,
+                 :approved => true)
+  user.reset_perishable_token!
+  user.save!
 end
 
 When /^I log in as "([^\"]*)" and password "([^\"]*)"$/ do |email, password|
@@ -24,8 +30,22 @@ Given /^a logged in (user|admin) with the email "([^"]+)"(?: and password "([^"]
   end
 end
 
-Then /^I should be logged in as "([^\"]*)"$/ do |email|
-  UserSession.find.user.email.should == email
+When /^the user is logged in$/ do
+  user = model("the user")
+  user.password = "password"
+  user.password_confirmation = "password"
+  user.save!
+  steps %Q{
+    When I log in as "#{user.email}" and password "password"
+  }
+end
+
+Then /^I should be logged in(?: as "([^"]+)")?$/ do |email|
+  user_session = UserSession.find
+  user_session.should_not be_nil
+  user = user_session.user
+  user.should_not be_nil
+  user.email.should == email if user && email
 end
 
 Then /^no one should be logged in$/ do
@@ -55,12 +75,14 @@ When /^I reset my password with a bad token$/ do
   visit edit_password_reset_path("badtoken")
 end
 
-When /^I register as "([^\"]*)" with password "([^\"]*)"(?: and confirmation "([^\"]*)")?$/ do |email, password, confirmation|
-  confirmation ||= password
+When /I register with the following:/ do |table|
+  registration = table.rows_hash
+  registration["confirmation"] ||= registration["password"]
+
   visit path_to('the new account page')
-  fill_in('user_email', :with => email)
-  fill_in('user_password', :with => password)
-  fill_in('user_password_confirmation', :with => confirmation)
+  fill_in('user_email', :with => registration["email"])
+  fill_in('user_password', :with => registration["password"])
+  fill_in('user_password_confirmation', :with => registration["confirmation"])
   click_button("Create User")
 end
 
@@ -81,4 +103,11 @@ When /^I update my password (?:to|with) "([^\"]*)" and confirmation "([^\"]*)"$/
   }
 end
 
+When /^I confirm my email address as "([^\"]*)"$/ do |email|
+  user = User.find_by_email email
+  visit edit_email_confirmation_path(user.perishable_token)
+end
 
+When /^I confirm my email address with a bad token$/ do
+  visit edit_email_confirmation_path("badtoken")
+end

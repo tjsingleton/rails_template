@@ -9,20 +9,35 @@ Feature: Manage accounts
     When I go to the edit account page
     Then the "user_email" field should contain "user@example.com"
 
-  Scenario: Create new account
+  Scenario: Create new account with required fields
     Given I am not registered
-    When I register as "user@example.com" with password "password"
+    When I register with the following:
+      | email        | user@example.com |
+      | password     | password         |
+    Then I should see "Registration successful."
+    And "user@example.com" should receive an email
+
+  Scenario: Create new account with all fields
+    Given I am not registered
+    When I register with the following:
+      | email        | user@example.com |
+      | password     | password         |
     Then I should see "Registration successful."
     And "user@example.com" should receive an email
 
   Scenario: Create new account with mismatched password
     Given I am not registered
-    When I register as "user@example.com" with password "password" and confirmation "badpass"
+    When I register with the following:
+      | email        | user@example.com |
+      | password     | password         |
+      | confirmation | badpass          |
     Then I should see "doesn't match confirmation"
 
   Scenario: Create new account with used email address
     Given a user with the email "user@example.com" and password "password"
-    When I register as "user@example.com" with password "password"
+    When I register with the following:
+      | email        | user@example.com |
+      | password     | password         |
     Then I should see "has already been taken"
 
   Scenario: Edit account to change email address

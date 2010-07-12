@@ -10,7 +10,7 @@ Feature: Impersonation
     And I should see "Sorry, you not allowed to access that page" within "#flash_error"
 
   Scenario: No users to impersonate
-    Given a logged in admin with the email "user@example.com"
+    Given a logged in admin with the email "user@example.com"   
     When I am on the new admin impersonation page
     Then I should be on the root page
     And I should see "No users to impersonate" within "#flash_notice"
